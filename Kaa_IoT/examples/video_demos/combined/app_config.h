@@ -24,8 +24,8 @@ extern "C"
 #define KAA_URI "mqtt://mqtt.cloud.kaaiot.com"
 #define KAA_PORT 1883
 
-#define KAA_APPLICATION_VERSION "cno2um4e0qcc73d6sung-v1"
-#define KAA_ENDPOINT_TOKEN "XJUYOe08ax"
+#define KAA_APPLICATION_VERSION "your application version"
+#define KAA_ENDPOINT_TOKEN "Endpoint Token"
 
 #define LED_PIN 2
 
