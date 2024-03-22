@@ -27,8 +27,8 @@ Supported Kaa IoT features:
 3. Update the following WiFi and Kaa IoT parameters in `app_config.h` of the example
 
 ```
-#define TEST_WIFI_SSID "desk"
-#define TEST_WIFI_PASSWORD "12345678"
+#define TEST_WIFI_SSID "Wifi-Router"
+#define TEST_WIFI_PASSWORD "Wifi Passwors"
 
 #define KAA_URI "mqtt://mqtt.cloud.kaaiot.com"
 #define KAA_PORT 1883
