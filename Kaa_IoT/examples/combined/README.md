@@ -1,23 +1,30 @@
-# arduino-esp32-iot-platforms-Thing-pub-sub
+# Esp32 Kaa Iot Arduino Platform
+The Buildstorm platform simplifies the integration of Kaa IoT core features onto ESP32 Hardware,  from basic IoT pub/sub functionalities to advanced features like commands and OTA updates.
+
+The architecture is based on the core IDF APIs, complemented by a C++ wrapper tailored for application use, guaranteeing non-blocking operation of all APIs. Each user action, including HTTP requests, MQTT publishing, Shadow updates, and OTA, is logged as an event and seamlessly managed in the background. To maintain this seamless operation, the platform effectively runs a system task.
+
+This establishes a robust foundation for your upcoming IoT project.
+
+Supported Kaa IoT features:
+
+1. MQTT pub/sub
+2. Telemetry updates
+3. Metadata updates
+4. Handling commands
+5. OTA firmware updates
 
 ## Solutions
 1. [ESP32 Kaa IoT Platform](https://buildstorm.com/solutions/esp32-kaa-iot-platform/)
 
 ## Blogs
-1. [Kaa OTA Updates](https://buildstorm.com/blog/kaa-ota-updates/)
+1. [Kaa OTA Updates](https://buildstorm.com/blog/kaa-iot-ota-updates/)
 2. [API Reference Guide]
 
-## Requirements
-
-1. [Download](https://www.arduino.cc/en/software) and install the Arduino IDE for windows, or you may follow the official instructions [here](https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing/) for other OS.
-
----
 
 ## Example Setup
-1. Follow [this article](https://buildstorm.com/blog/kaa-iot-device-provisioning-setup/) to setup Kaa IoT and generate Provision Device key and Provision Device Secret.
+1. Follow [this article](https://buildstorm.com/solutions/kaa-iot-device-setup/) to setup Kaa IoT and generate application version and endpoint token.
 2. Same will be used for all examples
-3. Copy the generated keys to `app_config.h` of the example
-4. Update the following WiFi and Kaa IoT parameters in `app_config.h` of the example
+3. Update the following WiFi and Kaa IoT parameters in `app_config.h` of the example
 
 ```
 #define TEST_WIFI_SSID "desk"
@@ -31,26 +38,28 @@
 ```
 
 ---
+---
+## SoC Compatibility
 
-## Building the project
+| Name            | BLE           | OTA           |
+|-----------------|---------------|---------------|
+| ESP32           | Not Supported | Supported     |
+| ESP32 S3        | Supported     | Supported     |
 
-1. Open the `Arduino IDE`
-2. Navigate to `File` and Select `Open` or press `Ctrl+O` on keyboard
-3. Copy all the needed parameters to `app_config.h`
-4. Click on `Verify` to compile the sketch
-5. Click on `Upload` to upload the sketch to device
-
+While our Arduino IoT platform currently supports BLE on ESP32S3, these capabilities are accessible on our ESP-IDF platform for all ESP32 SoCs. These functionalities will soon be integrated into Arduino. Until then, you can explore the IDF version of our platform [ESP32-idf Kaa IoT Platform](https://github.com/BuildStormTechnologies/esp32-idf-kaa-iot).
 
 ---
+## Arduino setting
+1. ESP32 settings
 
-## Testing
-1. On first boot, device will register itself and reboot
-2. Open the [Kaa IoT console](https://kaa.cloud/home), and in the left menu, choose Entities, devices to open the attributes.
-3. Following blog shows subscribe/publish functionality [Kaa IoT Device Provisioning Setup](https://buildstorm.com/blog/kaa-iot-device-provisioning-setup/)
-4. Testing OTA
-   1. It requires files to be uploaded and firmware to assigned to the device . Please follow the link [Kaa OTA Updates](https://buildstorm.com/blog/kaa-ota-updates/)
+    ![esp32 arduino settings](<images/esp32 arduino settings.png>)
+<br />
+<br />
+<br />
 
----
+2. ESP32S3 settings
+
+   ![esp32s3 arduino settings](<images/esp32s3 arduino settings.png>)
 
 ## Device Menu
 1. On serial terminal, press `m` to display device menu
