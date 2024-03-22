@@ -9,8 +9,8 @@ Supported Kaa IoT features:
 
 1. MQTT pub/sub
 2. Telemetry updates
-3. Metadata updates
-4. Handling commands
+3. Metadata management
+4. Command processing
 5. OTA firmware updates
 
 ## Solutions
